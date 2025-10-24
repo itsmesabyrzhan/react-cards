@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import './Button.css'
+import cls from './Button.module.css'
 
 export const Button = () => {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <button className="button" onClick={ () => setCount((count) => count + 1) }>
+      <button className={ cls.button } onClick={ () => setCount((count) => count + 1) }>
         count is { count }
       </button>
     </>
