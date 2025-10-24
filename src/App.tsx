@@ -1,7 +1,7 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { Button } from './Button.tsx'
+import { Button } from './components/Button/Button.tsx'
 
 function App() {
 
