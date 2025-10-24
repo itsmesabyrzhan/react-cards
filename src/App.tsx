@@ -1,13 +1,7 @@
-import './App.css'
-import { List } from './components/List/List.tsx'
+import { MainLayout } from './components/MainLayout'
 
 function App() {
-
-  return (
-    <>
-      <List />
-    </>
-  )
+  return <MainLayout />
 }
 
 export default App
