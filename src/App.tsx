@@ -2,8 +2,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Button } from './components/Button/Button.tsx'
+import { useState } from 'react'
 
 function App() {
+
+  const [count, setCount] = useState(0)
+
 
   return (
     <>
@@ -17,7 +21,12 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <Button />
+        <Button
+          onClick={ () => setCount((count) => count + 1) }
+          variant={ 'primary' }
+        >
+          { `count is ${ count }` }
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

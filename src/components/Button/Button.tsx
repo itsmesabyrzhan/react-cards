@@ -1,14 +1,19 @@
-import { useState } from 'react'
 import cls from './Button.module.css'
+import type { ReactNode, MouseEventHandler } from 'react'
 
-export const Button = () => {
-  const [count, setCount] = useState(0)
+type ButtonVariant = 'primary' | 'secondary' | 'outline'
+
+type ButtonProps = {
+  onClick?: MouseEventHandler<HTMLButtonElement>
+  children: ReactNode
+  variant?: ButtonVariant
+}
+
+export const Button = ({ onClick, children, variant = 'primary' }: ButtonProps) => {
 
   return (
-    <>
-      <button className={ cls.button } onClick={ () => setCount((count) => count + 1) }>
-        count is { count }
-      </button>
-    </>
+    <button className={ `${ cls.button } ${ cls[variant] }` } onClick={ onClick }>
+      { children }
+    </button>
   )
 }
